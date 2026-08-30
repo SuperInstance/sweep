@@ -97,3 +97,10 @@
 - Pre-rewrite commits remain reachable on GitHub by SHA until server-side GC; force-push removes them from branch tips only. Rotation above is therefore mandatory, not optional.
 - Anyone who cloned these repos while private holds the old history.
 - `reports/*.json` contain the plaintext secret values — deliberately NOT committed to the ledger repo (see `.gitignore`).
+
+## FOLLOW-UP — 2026-08-30 ~09:40 AKDT (Casey: "do everything you can")
+- fleet-twin → PUBLIC (flipped by foreman on Casey's authorization; content findings redacted earlier, ops content accepted by owner).
+- fleet-inventory → PUBLIC (flipped by foreman on Casey's authorization).
+- **SuperInstance private count: 0. All 10 repos public.**
+- fleet-twin INGEST_TOKEN ROTATED: new 48-hex token generated, uploaded via `wrangler secret put INGEST_TOKEN`, old token 6b4546…36f4 DEAD. Plaintext preserved at reports/rotated-fleet-twin-ingest.txt (gitignored). Consumers must update local env/scripts.
+- REMAINING (dashboard-only, cannot rotate via API): DeepInfra key zYuV…TjaPkl, DeepSeek key sk-f742…68b0c — still on Casey's desk.
